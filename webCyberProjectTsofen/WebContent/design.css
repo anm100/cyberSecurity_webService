@@ -1,0 +1,28 @@
+@charset "windows-1255";
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(odd) {
+	background-color: #f2f2f2
+}
+
+tr:nth-child(even) {
+	background-color: white;
+}
+
+th {
+	background-color: #0099cc;
+	color: black;
+}
+
+body {
+	background-image: url(file:///C:/webCyberProjectTsofen/src/img/pic.jpg);
+}
