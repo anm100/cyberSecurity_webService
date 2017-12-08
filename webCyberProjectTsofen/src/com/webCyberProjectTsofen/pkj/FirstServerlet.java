@@ -3,6 +3,7 @@ package com.webCyberProjectTsofen.pkj;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,6 +34,16 @@ public class FirstServerlet extends HttpServlet {
        ev8=new Event("pc-8", "192.155.45.15-yasmen","minor","5/12/2017-22:6","log text");
        ev9=new Event("pc-9", "192.155.45.15-Tsofen","minor","5/12/2017-22:6","log text");
        ev10=new Event("pc-10", "192.155.45.15-Tsofen","minor","5/12/2017-22:6","log text");
+       myList.add(ev1);
+       myList.add(ev2);
+       myList.add(ev3);
+       myList.add(ev4);
+       myList.add(ev5);
+       myList.add(ev6);
+       myList.add(ev7);
+       myList.add(ev8);
+       myList.add(ev9);
+       myList.add(ev10);
 
     }
 
@@ -41,7 +52,14 @@ public class FirstServerlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setAttribute("posts",myList);
+		
+		//getServletConfig().getServletContext().getRequestDispatcher("/index.jsp").forward(request,response);
+		
+		
+         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
+         dispatcher.forward(request, response);
 	}
 
 	/**
