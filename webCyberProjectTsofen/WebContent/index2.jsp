@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Type"
 	content="text/html; charset=windows-1255">
 
-<title>Events Table</title>
+<title>Logs Table</title>
 </head>
 
 
@@ -26,25 +26,25 @@
 
 
 	<div class="main">
-		<h1>Events Table</h1>
+		<h1>Logs Table</h1>
 		<br> <br>
 		<table id="myTable" >
 			<tr>
-					<th>ID</th>
-					<th>Location</th>
+					<th>IP Adress</th>
+					<th>Mac Adress</th>
 					<th>status</th>
-					<th>Date time</th>
-					<th>Log text</th>
+					<th>Update date and time</th>
+					<th>Path</th>
 
 
 				</tr>
 				
 	<c:forEach items="${posts}" var="post"><tr>
-     <td>${post.id}</td>
-     <td>${post.location}</td>
-     <td>${post.ststus}</td>
-     <td>${post.dateTime}</td>
-     <td>${post.logText}</td>
+     <td>${post.iPAdress}</td>
+     <td>${post.macAdress}</td>
+     <td>${post.status}</td>
+     <td>${post.update}</td>
+     <td>${post.path}</td>
    </tr>
   </c:forEach>
 				
@@ -52,4 +52,3 @@
 	</div>
 </body>
 </html>
-
