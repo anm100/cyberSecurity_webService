@@ -29,8 +29,13 @@ public DataBase( String address, String port, String username, String password, 
 		this.username = username;
 		this.password = password;
 		this.address = address;
+		
 		conn();
-	
+	System.out.println(database);
+	System.out.println(address);
+	System.out.println(username);
+	System.out.println(password);
+
 
 }
 
@@ -68,6 +73,8 @@ public List<Event> getAllEvents() {
     try {
         Statement statement = getConnection().createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT events.id,  events.EventName as eventName,events.TimeStamp as TimeDate,concat( host.HostName, \"    \", HostMac.ip) as HostDetails, TypeEvents.Severity as SecurityLevel,events.summary  FROM sys.EVENTS   inner JOIN HostMac on events.HostID = HostMac.id  inner JOIN TypeEvents on TypeEvents.name = events.EventName  inner join Host on host.id=hostmac.id ;");
+        System.out.println(resultSet);
+
         while( resultSet.next() ) {
             Event event = new Event();
             event.setId( resultSet.getString( "id" ) );
@@ -78,6 +85,7 @@ public List<Event> getAllEvents() {
             event.setClient(resultSet.getString("HostDetails"));
             
             events.add(event);
+            
         }
         resultSet.close();
         statement.close();

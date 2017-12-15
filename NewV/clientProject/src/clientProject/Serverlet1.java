@@ -25,7 +25,7 @@ public class Serverlet1 extends HttpServlet {
     public Serverlet1() {
         super();
         //data=new DataBase(address, port, username, password, database)
-       //data=new DataBase("localhost", "3306", "root", "admin", "sys");
+      // data=new DataBase("localhost", "3306", "root", "admin", "sys");
       data=new DataBase("192.168.2.106", "3306", "root", "1234", "sys");
     	myList=data.getAllEvents();
     }
